@@ -1,0 +1,64 @@
+"0","# Get all different BYD models"
+"0","unique_models <- unique(byd_full_data$Model)"
+"0","print(unique_models)"
+"1","[1]"
+"1"," ""Han EV"" "
+"1"," ""Dolphin"""
+"1"," ""Tang EV"""
+"1"," ""Atto 3"" "
+"1"," ""Seal""   "
+"1"," ""Seagull"""
+"1","
+"
+"0","# Group by model to calculate total sales and add Manufacturer column"
+"0","sales_by_model_byd <- byd_full_data %>%"
+"0","  group_by(Model) %>%"
+"0","  summarise("
+"0","    Total_Units_Sold_2024 = sum(Units_Sold_2024, na.rm = TRUE),"
+"0","    Average_Price_USD = mean(Price_USD, na.rm = TRUE)  # Add average price"
+"0","  ) %>%"
+"0","  mutate(Manufacturer = ""BYD"") %>%  # Add Manufacturer column"
+"0","  arrange(desc(Total_Units_Sold_2024))"
+"0",""
+"0","# Display results"
+"0","print(sales_by_model_byd)"
+"1","[38;5;246m# A tibble: 6 × 4[39m
+"
+"1","  Model   Total_Units_Sold_2024 Average_Price_USD Manufacturer
+"
+"1","  [3m[38;5;246m<chr>[39m[23m                   [3m[38;5;246m<int>[39m[23m             [3m[38;5;246m<dbl>[39m[23m [3m[38;5;246m<chr>[39m[23m       
+"
+"1","[38;5;250m1[39m Dolphin                [4m1[24m[4m5[24m[4m4[24m225            [4m8[24m[4m3[24m325. BYD         
+"
+"1","[38;5;250m2[39m Atto 3                 [4m1[24m[4m1[24m[4m7[24m689            [4m9[24m[4m4[24m530. BYD         
+"
+"1","[38;5;250m3[39m Han EV                 [4m1[24m[4m1[24m[4m2[24m309            [4m9[24m[4m8[24m202. BYD         
+"
+"1","[38;5;250m4[39m Tang EV                 [4m6[24m[4m9[24m183            [4m9[24m[4m7[24m686. BYD         
+"
+"1","[38;5;250m5[39m Seal                    [4m6[24m[4m6[24m769           [4m1[24m[4m0[24m[4m3[24m403. BYD         
+"
+"1","[38;5;250m6[39m Seagull                 [4m4[24m[4m2[24m262           [4m1[24m[4m0[24m[4m7[24m959. BYD         
+"
+"0","# Display results"
+"0","print(sales_by_model_byd)"
+"1","[38;5;246m# A tibble: 6 × 4[39m
+"
+"1","  Model   Total_Units_Sold_2024 Average_Price_USD Manufacturer
+"
+"1","  [3m[38;5;246m<chr>[39m[23m                   [3m[38;5;246m<int>[39m[23m             [3m[38;5;246m<dbl>[39m[23m [3m[38;5;246m<chr>[39m[23m       
+"
+"1","[38;5;250m1[39m Dolphin                [4m1[24m[4m5[24m[4m4[24m225            [4m8[24m[4m3[24m325. BYD         
+"
+"1","[38;5;250m2[39m Atto 3                 [4m1[24m[4m1[24m[4m7[24m689            [4m9[24m[4m4[24m530. BYD         
+"
+"1","[38;5;250m3[39m Han EV                 [4m1[24m[4m1[24m[4m2[24m309            [4m9[24m[4m8[24m202. BYD         
+"
+"1","[38;5;250m4[39m Tang EV                 [4m6[24m[4m9[24m183            [4m9[24m[4m7[24m686. BYD         
+"
+"1","[38;5;250m5[39m Seal                    [4m6[24m[4m6[24m769           [4m1[24m[4m0[24m[4m3[24m403. BYD         
+"
+"1","[38;5;250m6[39m Seagull                 [4m4[24m[4m2[24m262           [4m1[24m[4m0[24m[4m7[24m959. BYD         
+"
+"0","Tesla_full_data <- df2[df2$Manufacturer == ""Tesla"", ]"
+"0","Tesla_full_data"

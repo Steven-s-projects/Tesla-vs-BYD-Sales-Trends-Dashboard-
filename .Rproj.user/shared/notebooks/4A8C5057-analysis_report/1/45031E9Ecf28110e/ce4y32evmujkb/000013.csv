@@ -1,0 +1,47 @@
+"0","# Get all different BYD models"
+"0","unique_models <- unique(Tesla_full_data$Model)"
+"0","print(unique_models)"
+"1","[1]"
+"1"," ""Model Y""            "
+"1"," ""Cybertruck""         "
+"1"," ""Model S""            "
+"1"," ""Model X""            "
+"1"," ""Roadster (upcoming)"""
+"1"," ""Model 3""            "
+"1","
+"
+"0","# Group by model to calculate total sales"
+"0","sales_by_model_tesla <- Tesla_full_data %>%"
+"0","  group_by(Model) %>%"
+"0","  summarise("
+"0","    Total_Units_Sold_2024 = sum(Units_Sold_2024, na.rm = TRUE),"
+"0","    Average_Price_USD = mean(Price_USD, na.rm = TRUE)  # Add average price"
+"0","  ) %>%"
+"0","   mutate(Manufacturer = ""Tesla"") %>%  # Add Manufacturer column"
+"0","  arrange(desc(Total_Units_Sold_2024))"
+"0",""
+"0","# Display results"
+"0","print(sales_by_model_tesla)"
+"1","[38;5;246m# A tibble: 6 × 4[39m
+"
+"1","  Model               Total_Units_Sold_2024 Average_Price_USD Manufacturer
+"
+"1","  [3m[38;5;246m<chr>[39m[23m                               [3m[38;5;246m<int>[39m[23m             [3m[38;5;246m<dbl>[39m[23m [3m[38;5;246m<chr>[39m[23m       
+"
+"1","[38;5;250m1[39m Model X                            [4m1[24m[4m6[24m[4m4[24m822            [4m9[24m[4m3[24m816. Tesla       
+"
+"1","[38;5;250m2[39m Model Y                            [4m1[24m[4m2[24m[4m6[24m568           [4m1[24m[4m0[24m[4m9[24m242. Tesla       
+"
+"1","[38;5;250m3[39m Cybertruck                         [4m1[24m[4m2[24m[4m6[24m551            [4m9[24m[4m1[24m654. Tesla       
+"
+"1","[38;5;250m4[39m Model S                            [4m1[24m[4m0[24m[4m9[24m230           [4m1[24m[4m0[24m[4m8[24m015. Tesla       
+"
+"1","[38;5;250m5[39m Roadster (upcoming)                 [4m7[24m[4m0[24m781           [4m1[24m[4m0[24m[4m3[24m148. Tesla       
+"
+"1","[38;5;250m6[39m Model 3                             [4m6[24m[4m0[24m263            [4m8[24m[4m8[24m007. Tesla       
+"
+"0","# Merge the two data tables"
+"0","combined_sales <- rbind(sales_by_model_byd, sales_by_model_tesla)"
+"0",""
+"0","# View merged data"
+"0","head(combined_sales)"

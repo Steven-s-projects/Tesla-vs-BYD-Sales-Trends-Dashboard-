@@ -1,0 +1,5 @@
+"0","#load the library"
+"0","library(dplyr)"
+"0","library(ggplot2)"
+"0","byd_full_data <- df2[df2$Manufacturer == ""BYD"", ]"
+"0","byd_full_data"

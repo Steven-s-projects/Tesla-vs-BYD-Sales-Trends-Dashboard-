@@ -1,0 +1,14 @@
+"0","#apa7th citation download "
+"0","download.file("
+"0","  ""https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"","
+"0","  ""apa7.csl"","
+"0","  mode = ""wb"""
+"0",")"
+"2","试开URL’https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl'
+"
+"2","Content type 'text/plain; charset=utf-8'"
+"2"," length 85817 bytes (83 KB)
+"
+"2","downloaded 83 KB
+
+"
